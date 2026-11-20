@@ -4,8 +4,8 @@
 # -------------------------------------------------------------------------
 
 # Accompanies the paper:
-# Askarova G., Puchalska E., Lewandowski M., Sexton J., Kuczyński L., Skoracka A. 
-# 'Does biotic niche expansion come at an abiotic cost? Evidence from experimental evolution.'
+# Askarova G., Skoracka A., Puchalska E., Lewandowski M., Sexton J., Kuczyński L. 
+# 'Biotic niche expansion constrains the fundamental abiotic niche: Evidence from experimental evolution'
 
 
 # Setup -------------------------------------------------------------------
