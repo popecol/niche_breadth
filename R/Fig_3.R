@@ -4,8 +4,8 @@
 # -------------------------------------------------------------------------
 
 # Accompanies the paper:
-# Askarova G., Puchalska E., Lewandowski M., Sexton J., Kuczyński L., Skoracka A. 
-# 'Does biotic niche expansion come at an abiotic cost? Evidence from experimental evolution.'
+# Askarova G., Skoracka A., Puchalska E., Lewandowski M., Sexton J., Kuczyński L. 
+# 'Biotic niche expansion constrains the fundamental abiotic niche: Evidence from experimental evolution'
 
 # Note: Run 'thermal_niche.R' first.
 
@@ -62,9 +62,9 @@ nf <- layout(matrix(c(1, 2, 2, 1, 3, 3), 2, 3, byrow = TRUE))
 
 # Fig. 3A -----------------------------------------------------------------
 
-par(mar = c(5.2, 5, 3, 1))
+par(mar = c(5.2, 5.5, 3, 1))
 
-plot(fit ~ temp, nd, xlim = c(10, 40), ylim = ylim, type = "n", xlab = "Temperature (\u00B0C)", ylab = "Growth rate", cex.lab = 1.9, main = "")
+plot(fit ~ temp, nd, xlim = c(10, 40), ylim = ylim, type = "n", xlab = "Temperature (\u00B0C)", ylab = expression("Growth rate (14 days"^{-1}*")"), cex.lab = 1.9, main = "")
 abline(h = 0, col = "grey30")
 
 for (i in seq(2)) {
@@ -74,7 +74,7 @@ for (i in seq(2)) {
 }
 
 legend(9, -7, legend = rev(labels), fill = rev(colc), cex = 1.5, bty = "n", text.width = 4, ncol = 1)
-mtext("(a)", side = 2, line = -1, padj = -9.3, cex = 1.5, las = 1)
+mtext("(a)", side = 2, line = -1, padj = -10.1, cex = 1.5, las = 1)
 
 
 # Fig. 3B -----------------------------------------------------------------
@@ -88,7 +88,7 @@ lines(d_nb_alt)
 polygon(d_nb_alt, col = col2b, border = NA)
 abline(v = mean(nb_alt))
 legend("topright", legend = labels, fill = c(col2b, col1b), cex = 1.5, inset = c(-0.06, -0.4), xpd = TRUE, horiz = TRUE, bty = "n", text.width = 1.7)
-mtext("(b)", side = 2, line = -1, padj = -3.7, cex = 1.5, las = 1)
+mtext("(b)", side = 2, line = -1, padj = -3.9, cex = 1.5, las = 1)
 mtext("Probability density", side = 2, line = 3, adj = 2.5, cex = 1.3)
 
 
@@ -104,7 +104,7 @@ abline(v = ci(dx + delta, 0.01), lty = 3)
 # summary(delta)
 lab <- seq(-4, 1, 1)
 axis(1, las = 1, at = lab + dx, labels = lab)
-mtext("(c)", side = 2, line = -1, padj = -4, cex = 1.5, las = 1)
+mtext("(c)", side = 2, line = -1, padj = -4.2, cex = 1.5, las = 1)
 
 par(op)
 

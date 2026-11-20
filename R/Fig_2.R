@@ -4,8 +4,8 @@
 # -------------------------------------------------------------------------
 
 # Accompanies the paper:
-# Askarova G., Puchalska E., Lewandowski M., Sexton J., Kuczyński L., Skoracka A. 
-# 'Does biotic niche expansion come at an abiotic cost? Evidence from experimental evolution.'
+# Askarova G., Skoracka A., Puchalska E., Lewandowski M., Sexton J., Kuczyński L. 
+# 'Biotic niche expansion constrains the fundamental abiotic niche: Evidence from experimental evolution'
 
 # Note: Run 'biotic_niche.R' first.
 
@@ -74,15 +74,15 @@ nf <- layout(matrix(c(1, 2, 2, 1, 3, 3), 2, 3, byrow = TRUE))
 # Fig. 2A -----------------------------------------------------------------
 # The instantaneous population growth rates of experimental populations evolved in 'Stable' and 'Alternating' host environments on the six plant species that were tested. Vertical bars denote 95% confidence intervals.
 
-par(mar = c(10, 5, 3, 1))
+par(mar = c(10, 5.5, 3, 1))
 
-plot(at1, newd$fit, type = "h", lwd = 6, lend = 1, xaxt = "n", xlab = "", ylab = "Growth rate", cex.lab = 1.9, xlim = c(0.5, 17.5), ylim = range(p), col = colc)
+plot(at1, newd$fit, type = "h", lwd = 6, lend = 1, xaxt = "n", xlab = "", ylab = expression("Growth rate (14 days"^{-1}*")"), cex.lab = 1.9, xlim = c(0.5, 17.5), ylim = range(p), col = colc)
 abline(h = 0, col = "grey30")
 segments(at1, newd$lci, at1, newd$uci, col = col, lwd = 1)
 axis(1, at = at2, labels = hosts, cex.axis = cex.axis, las = 2)
 # mtext("Host plant", 1, 4, cex = 2)
 legend(2.3, -1.5, legend = rev(labels), fill = rev(colc), cex = 1.5, bty = "n", text.width = 4, ncol = 1)
-mtext("(a)", side = 2, line = -1, padj = -7.7, cex = 1.5, las = 1)
+mtext("(a)", side = 2, line = -1, padj = -8.3, cex = 1.5, las = 1)
 
 
 # Fig. 2B ----
@@ -97,7 +97,7 @@ lines(d_nb_alt)
 polygon(d_nb_alt, col = col2b, border = NA)
 abline(v = mean(nb_alt))
 legend(0.15, 12, legend = rev(labels), fill = rev(colc), cex = 1.5, bty = "n", text.width = 4, ncol = 1)
-mtext("(b)", side = 2, line = -1, padj = -3.7, cex = 1.5, las = 1)
+mtext("(b)", side = 2, line = -1, padj = -3.9, cex = 1.5, las = 1)
 
 mtext("Probability density", side = 2, line = 3, adj = 2.5, cex = 1.3)
 
@@ -114,8 +114,9 @@ abline(v = c(mean(dx + delta), ci(dx + delta)), lty = c(1, 2, 2))
 abline(v = ci(dx + delta, 0.01), lty = 3)
 lab <- seq(-0.1, 1, 0.1)
 axis(1, las = 1, at = lab + dx, labels = lab)
-mtext("(c)", side = 2, line = -1, padj = -4, cex = 1.5, las = 1)
+mtext("(c)", side = 2, line = -1, padj = -4.2, cex = 1.5, las = 1)
 
 par(op)
 
 dev.off()
+
